@@ -1,0 +1,2 @@
+FROM minimum2scp/baseimage-wheezy:latest
+

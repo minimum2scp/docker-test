@@ -4,7 +4,7 @@ describe 'minimum2scp/baseimage-jessie' do
   context 'with env [APT_LINE=keep]' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/baseimage-jessie:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/baseimage-jessie:ci",
         'Env' => [ 'APT_LINE=keep' ]
       })
     end
