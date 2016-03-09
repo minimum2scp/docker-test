@@ -1,0 +1,32 @@
+machine:
+  ruby:
+    version: 2.3.0
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "~/.cache/docker"
+  pre:
+    - docker info
+    - docker version
+    - mkdir -p ~/.cache/docker
+    - if [ -e ~/.cache/docker/baseimage.tar ]; then
+        docker load -i ~/.cache/docker/baseimage.tar;
+      else
+        docker pull minimum2scp/baseimage:latest;
+        docker save minimum2scp/baseimage:latest > ~/.cache/docker/baseimage.tar
+      fi
+    - if [ -e ~/.cache/docker/baseimage-jessie.tar ]; then
+        docker load -i ~/.cache/docker/baseimage-jessie.tar;
+      else
+        docker pull minimum2scp/baseimage-jessie:latest;
+        docker save minimum2scp/baseimage-jessie:latest > ~/.cache/docker/baseimage-jessie.tar
+      fi
+    - if [ -e ~/.cache/docker/baseimage-wheezy.tar ]; then
+        docker load -i ~/.cache/docker/baseimage-wheezy.tar;
+      else
+        docker pull minimum2scp/baseimage-wheezy:latest;
+        docker save minimum2scp/baseimage-wheezy:latest > ~/.cache/docker/baseimage-wheezy.tar
+      fi
+
