@@ -15,18 +15,18 @@ dependencies:
         docker load -i ~/.cache/docker/baseimage.tar;
       else
         docker pull minimum2scp/baseimage:latest;
-        docker save minimum2scp/baseimage:latest > ~/.cache/docker/baseimage.tar
+        docker save minimum2scp/baseimage:latest > ~/.cache/docker/baseimage.tar;
       fi
     - if [ -e ~/.cache/docker/baseimage-jessie.tar ]; then
         docker load -i ~/.cache/docker/baseimage-jessie.tar;
       else
         docker pull minimum2scp/baseimage-jessie:latest;
-        docker save minimum2scp/baseimage-jessie:latest > ~/.cache/docker/baseimage-jessie.tar
+        docker save minimum2scp/baseimage-jessie:latest > ~/.cache/docker/baseimage-jessie.tar;
       fi
     - if [ -e ~/.cache/docker/baseimage-wheezy.tar ]; then
         docker load -i ~/.cache/docker/baseimage-wheezy.tar;
       else
         docker pull minimum2scp/baseimage-wheezy:latest;
-        docker save minimum2scp/baseimage-wheezy:latest > ~/.cache/docker/baseimage-wheezy.tar
+        docker save minimum2scp/baseimage-wheezy:latest > ~/.cache/docker/baseimage-wheezy.tar;
       fi
 
