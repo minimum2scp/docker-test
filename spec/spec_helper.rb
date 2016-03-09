@@ -65,9 +65,7 @@ def stop_container
   Specinfra.configuration.logger.info "Stopping container ..."
 
   ## reset Net::SSH object for next test
-  Specinfra::Backend::Ssh.instance.instance_eval do
-    @config[:ssh] = nil
-  end
+  Specinfra.backend.set_config(:ssh, nil)
 end
 
 
