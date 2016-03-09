@@ -10,7 +10,9 @@ dependencies:
   pre:
     - docker info
     - docker version
+    - docker images
     - mkdir -p ~/.cache/docker
+    - ls -lah ~/.cache/docker
     - if [ -e ~/.cache/docker/baseimage.tar ]; then
         docker load -i ~/.cache/docker/baseimage.tar;
       else
@@ -29,4 +31,6 @@ dependencies:
         docker pull minimum2scp/baseimage-wheezy:latest;
         docker save minimum2scp/baseimage-wheezy:latest > ~/.cache/docker/baseimage-wheezy.tar;
       fi
+    - docker images
+    - ls -lah ~/.cache/docker
 
